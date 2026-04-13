@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adarsh K Sujai - Software Developer</title>
+<title>Adarsh K Sujai - Data Scientist & Software Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -528,6 +528,10 @@
   }
 
   /* ── ANIMATIONS ── */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -593,10 +597,14 @@
   <div class="hero" style="position:relative;">
     <div class="hero-eyebrow">Available for work</div>
     <h1 class="hero-heading">
-      Building things<br>
-      <span class="line2">that actually work.</span>
+      Code. Data.<br>
+      <span class="line2">Insights.</span>
     </h1>
-    <p class="hero-sub">I turn complex problems into clean code - from training computer vision models to shipping backend APIs. Always learning, always shipping.</p>
+    <p class="hero-sub">Data scientist and Software developer - I build end-to-end systems, from computer vision pipelines to data-driven analysis. Always learning, always shipping.</p>
+    <div class="hero-degree reveal" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s ease 0.6s both;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      BCA Data Science Graduate
+    </div>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="https://www.linkedin.com/in/adarshsujai/" target="_blank" class="btn btn-secondary">LinkedIn ↗</a>
@@ -607,12 +615,12 @@
     </div>
     <div class="stats">
       <div class="stat-item">
-        <div class="stat-num">2+</div>
-        <div class="stat-label">Projects shipped</div>
+        <div class="stat-num">Dev</div>
+        <div class="stat-label">+ ML</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">ML</div>
-        <div class="stat-label">+ Backend</div>
+        <div class="stat-num">Data Science</div>
+        <div class="stat-label">+ Analytics</div>
       </div>
     </div>
   </div>
@@ -626,22 +634,38 @@
     <div class="project-card reveal">
       <div class="project-number">001 - COMPUTER VISION</div>
       <div class="project-title">Automatic License Plate Recognition</div>
-      <p class="project-desc">End-to-end ALPR pipeline that detects and reads vehicle license plates in real time. Combines YOLOv8 for accurate plate detection with EasyOCR for character extraction, all served through a lightweight Flask REST API - ready to plug into any surveillance or traffic management system.</p>
+      <p class="project-desc">End-to-end ALPR pipeline that detects and reads vehicle license plates in real time. Combines YOLOv8 for accurate plate detection with EasyOCR for character extraction - ready to plug into any surveillance or traffic management system.</p>
       <div class="tags">
         <span class="tag">YOLOv8</span>
         <span class="tag">EasyOCR</span>
         <span class="tag">Python</span>
-        <span class="tag">Flask</span>
         <span class="tag">OpenCV</span>
         <span class="tag">Object Detection</span>
-        <span class="tag">REST API</span>
       </div>
       <div class="project-footer">
         <a href="https://github.com/Probly-Arsh/license-plate-recognition-yolov8" target="_blank" class="project-link">
           View on GitHub
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <span class="project-badge">ML + API</span>
+        <span class="project-badge">ML + CV</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="margin-top:1.5rem; border-style: dashed; opacity: 0.7;">
+      <div class="project-number" style="color:var(--accent3);">002 - DATA ANALYTICS · IN PROGRESS</div>
+      <div class="project-title">Data Analysis Project</div>
+      <p class="project-desc">An upcoming data analytics project - exploring real-world datasets to surface meaningful insights through visualisation and statistical analysis. Stay tuned.</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">& more</span>
+      </div>
+      <div class="project-footer">
+        <span style="font-size:13px; color:var(--accent3); display:flex; align-items:center; gap:8px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--accent3);display:inline-block;animation:pulse 1.5s ease-in-out infinite;"></span>
+          Coming soon
+        </span>
+        <span class="project-badge" style="background:rgba(56,189,248,0.1);color:var(--accent3);border-color:rgba(56,189,248,0.25);">Data Science</span>
       </div>
     </div>
   </section>
@@ -652,17 +676,24 @@
   <section id="skills">
     <div class="section-tag reveal">What I work with</div>
     <h2 class="section-title reveal">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-dot"></div><span class="skill-name">Python</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.05s"><div class="skill-dot"></div><span class="skill-name">Machine Learning</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.1s"><div class="skill-dot"></div><span class="skill-name">Computer Vision</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.15s"><div class="skill-dot"></div><span class="skill-name">YOLOv8</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.2s"><div class="skill-dot"></div><span class="skill-name">Flask</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.25s"><div class="skill-dot"></div><span class="skill-name">REST APIs</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.3s"><div class="skill-dot"></div><span class="skill-name">OCR</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.35s"><div class="skill-dot"></div><span class="skill-name">OpenCV</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.4s"><div class="skill-dot"></div><span class="skill-name">Git & GitHub</span></div>
-      <div class="skill-card reveal" style="transition-delay:0.45s"><div class="skill-dot"></div><span class="skill-name">Object Detection</span></div>
+
+    <p class="reveal" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:1rem;">Development</p>
+    <div class="skills-grid reveal">
+      <div class="skill-card"><div class="skill-dot"></div><span class="skill-name">Python</span></div>
+      <div class="skill-card"><div class="skill-dot"></div><span class="skill-name">Machine Learning</span></div>
+      <div class="skill-card"><div class="skill-dot"></div><span class="skill-name">Computer Vision</span></div>
+      <div class="skill-card"><div class="skill-dot"></div><span class="skill-name">Git & GitHub</span></div>
+    </div>
+
+    <p class="reveal" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--subtle);margin-top:2rem;margin-bottom:1rem;">Data & Analytics</p>
+    <div class="skills-grid reveal">
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">Pandas</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">NumPy</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">Matplotlib</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">SQL</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">Tableau</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">Power BI</span></div>
+      <div class="skill-card"><div class="skill-dot" style="background:linear-gradient(135deg,var(--accent3),#60a5fa);"></div><span class="skill-name">Excel</span></div>
     </div>
   </section>
 
