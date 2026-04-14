@@ -684,9 +684,57 @@
     visibility: visible;
   }
 
+  /* ── HAMBURGER & MOBILE MENU ── */
+  .nav-hamburger {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid var(--border2);
+    padding: 7px 12px;
+    cursor: pointer;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .nav-hamburger:hover { border-color: var(--accent2); color: var(--accent2); }
+  .ham-lines { display: flex; flex-direction: column; gap: 4px; }
+  .ham-lines span { display: block; width: 18px; height: 1px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .nav-hamburger.open .ham-lines span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  .nav-hamburger.open .ham-lines span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open .ham-lines span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 57px; left: 0; right: 0;
+    background: rgba(10,10,15,0.97); backdrop-filter: blur(20px);
+    z-index: 150; flex-direction: column;
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .mobile-menu.open { max-height: 400px; }
+  .mm-link {
+    font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s, padding-left 0.2s cubic-bezier(0.22,1,0.36,1);
+    display: block;
+  }
+  .mm-link:last-child { border-bottom: none; }
+  .mm-link:hover { color: var(--accent2); padding-left: 2rem; }
+  .mm-resume { color: var(--accent2); }
+
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; position: relative; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    nav { padding: 1rem 1.5rem; position: fixed; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
     .nav-links { display: none; }
+    .nav-hamburger { display: inline-flex; }
+    .mobile-menu { display: flex; flex-direction: column; }
     .hero { padding: 7rem 1.5rem 4rem; }
     section { padding: 5rem 1.5rem; }
     .stats { display: none; }
@@ -849,7 +897,7 @@
   <div class="loader-role">Software Developer &nbsp;·&nbsp; Data Scientist</div>
 </div>
 
-<nav>
+<nav id="nav">
   <div class="nav-logo">AKS</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -858,7 +906,22 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://probly-arsh.github.io/resume.pdf" target="_blank">Resume <svg width="11" height="11" viewBox="0 0 14 14" fill="none" style="display:inline-block;vertical-align:middle;transition:transform 0.25s cubic-bezier(.22,1,.36,1);" class="nav-arrow"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span class="ham-lines">
+      <span></span><span></span><span></span>
+    </span>
+    <span class="ham-label">Menu</span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about"    class="mm-link" onclick="closeMobileMenu()">About</a>
+  <a href="#projects" class="mm-link" onclick="closeMobileMenu()">Projects</a>
+  <a href="#skills"   class="mm-link" onclick="closeMobileMenu()">Skills</a>
+  <a href="#contact"  class="mm-link" onclick="closeMobileMenu()">Contact</a>
+  <a href="https://probly-arsh.github.io/resume.pdf" target="_blank" class="mm-link mm-resume" onclick="closeMobileMenu()">Resume ↗</a>
+</div>
 
 <main>
   <!-- HERO -->
@@ -1074,6 +1137,24 @@
       }, 600);
     }
   }, 40);
+
+  const burger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navEl = document.getElementById('nav');
+  function closeMobileMenu() {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+  burger.addEventListener('click', () => {
+    mobileMenu.style.top = navEl.offsetHeight + 'px';
+    const isOpen = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+  });
+  document.addEventListener('click', e => {
+    if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
 
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
