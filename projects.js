@@ -26,13 +26,13 @@ const PROJECTS = [
   },
   {
     number:   "003",
-    category: "Data Analytics",
+    category: "Data Analytics - Under Development",
     title:    "IPL / Cricket Analysis",
     desc:     "Exploratory analysis of 14 IPL seasons across 200,000+ deliveries. Surfaces team dominance, player rankings and over-phase trends through statistical analysis and data visualisation.",
     tags:     ["Python", "Pandas", "Matplotlib", "NumPy", "EDA"],
     link:     "",
     badge:    "Data Science",
-    status:   "Under Development"
+    status:   "coming-soon"
   }
 ];
 
