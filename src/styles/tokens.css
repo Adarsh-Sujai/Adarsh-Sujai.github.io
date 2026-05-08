@@ -1,0 +1,230 @@
+/* ============================================================
+   Stitch Design System - colors_and_type.css
+   Single source of truth for color + type tokens.
+   Linked to the "Taste Standard" defined in source/skills/taste-design.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Webfonts - loaded from Google Fonts (Geist, Outfit, Fraunces,
+   Instrument Serif, JetBrains Mono). Cabinet Grotesk and
+   Satoshi are NOT on Google Fonts; load them locally from
+   /fonts when available. Until then we substitute Outfit /
+   Geist as the closest matches and flag this in the README.
+   ------------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ============================================================
+     COLOR - neutrals (warm-leaning Zinc, never blue-clinical)
+     ============================================================ */
+  --canvas: #F9FAFB;            /* page background - warm canvas white */
+  --surface: #FFFFFF;           /* card / container fill */
+  --surface-2: #F4F4F5;         /* nested surface, sunken panels */
+  --ink: #18181B;               /* primary text - Zinc-950, never pure black */
+  --ink-2: #27272A;             /* secondary heavy text */
+  --steel: #71717A;             /* secondary text, body, metadata */
+  --slate: #94A3B8;             /* tertiary, timestamps, disabled */
+  --hairline: rgba(226, 232, 240, 0.5);  /* whisper border, 1px structural */
+  --hairline-strong: #E4E4E7;   /* solid divider when needed */
+
+  /* ============================================================
+     ACCENTS - pick ONE per project. Saturation < 80%.
+     ============================================================ */
+  --accent-emerald: #10B981;    /* growth, success, positive data */
+  --accent-blue:    #3B82F6;    /* productivity, SaaS, dev tools */
+  --accent-rose:    #E11D48;    /* creative, editorial, fashion */
+  --accent-amber:   #F59E0B;    /* community, social, warm */
+
+  /* default accent - projects override this one variable */
+  --accent: var(--accent-blue);
+  --accent-fg: #FFFFFF;
+  --accent-soft: color-mix(in oklab, var(--accent) 12%, var(--surface));
+
+  /* ============================================================
+     SEMANTIC STATE - reserved for system feedback only.
+     ============================================================ */
+  --success: #10B981;
+  --danger:  #EF4444;
+  --warn:    #F59E0B;
+  --info:    #64748B;
+
+  /* ============================================================
+     SHADOW - diffused, never harsh. No outer-glow neon.
+     ============================================================ */
+  --shadow-whisper: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card:    0 20px 40px -15px rgba(0, 0, 0, 0.05);
+  --shadow-float:   0 30px 60px -20px rgba(0, 0, 0, 0.10);
+  --shadow-inset:   inset 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  /* ============================================================
+     RADIUS - generous on cards (2.5rem), tighter on controls.
+     ============================================================ */
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 40px;            /* signature card radius */
+  --radius-full: 9999px;
+
+  /* ============================================================
+     SPACING - 8px base, generous section gaps.
+     ============================================================ */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ============================================================
+     CONTAINER - max-width 1400px, generous edge padding.
+     ============================================================ */
+  --container: 1400px;
+  --pad-edge: clamp(1rem, 4vw, 4rem);
+  --section-gap: clamp(3rem, 8vw, 6rem);
+
+  /* ============================================================
+     TYPE - families
+     ------------------------------------------------------------
+     Display + body use the same family for cohesion. Inter is
+     BANNED. Generic serifs are BANNED. Use Geist or Outfit as
+     primary; Cabinet Grotesk / Satoshi when locally available.
+     ============================================================ */
+  --font-display: "Geist", "Outfit", "Cabinet Grotesk", "Satoshi", system-ui, sans-serif;
+  --font-body:    "Geist", "Outfit", "Cabinet Grotesk", "Satoshi", system-ui, sans-serif;
+  --font-serif:   "Fraunces", "Instrument Serif", serif; /* editorial only - never in dashboards */
+  --font-mono:    "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* ============================================================
+     TYPE - fluid scale (clamp). Body never below 1rem.
+     ============================================================ */
+  --fs-display:  clamp(2.25rem, 5vw, 3.75rem); /* 36 → 60 */
+  --fs-h1:       clamp(2rem, 4vw, 3rem);       /* 32 → 48 */
+  --fs-h2:       clamp(1.5rem, 2.6vw, 2rem);   /* 24 → 32 */
+  --fs-h3:       clamp(1.25rem, 1.8vw, 1.5rem);/* 20 → 24 */
+  --fs-body:     1rem;                         /* 16 */
+  --fs-small:    0.875rem;                     /* 14 - minimum body size */
+  --fs-meta:     0.8125rem;                    /* 13 - mono metadata */
+  --fs-micro:    0.75rem;                      /* 12 - uppercase labels only */
+
+  /* tracking + leading */
+  --tracking-display: -0.025em;  /* track-tight headlines */
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.06em;    /* uppercase nav labels */
+
+  --leading-display: 1.1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.4;
+  --leading-body:    1.65;       /* relaxed body */
+
+  /* motion */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:  140ms;
+  --dur-base:  240ms;
+  --dur-slow:  420ms;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES - opt in by adding this stylesheet to
+   a page; tokens drive everything below.
+   ============================================================ */
+html {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { margin: 0; }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  font-weight: 700;
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-display); font-weight: 800; }
+h2 { font-size: var(--fs-h1); }
+h3 { font-size: var(--fs-h2); font-weight: 600; line-height: var(--leading-tight); }
+h4 { font-size: var(--fs-h3); font-weight: 600; letter-spacing: var(--tracking-tight); }
+
+p, li {
+  font-size: var(--fs-body);
+  color: var(--steel);
+  max-width: 65ch;
+  line-height: var(--leading-body);
+  text-wrap: pretty;
+}
+
+small, .meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  color: var(--slate);
+  letter-spacing: var(--tracking-normal);
+}
+
+code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9375em;
+  color: var(--ink-2);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+a:hover { color: var(--accent); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: var(--space-7) 0;
+}
+
+/* uppercase eyebrow / label */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--steel);
+}
+
+::selection { background: var(--ink); color: var(--canvas); }
+
+/* ============================================================
+   DARK MODE (opt-in via [data-theme="dark"] on <html>)
+   Mirrors the light system; warm neutrals, never blue-dark.
+   ============================================================ */
+[data-theme="dark"] {
+  --canvas: #0A0A0B;
+  --surface: #131316;
+  --surface-2: #1C1C20;
+  --ink: #F5F5F4;
+  --ink-2: #D4D4D8;
+  --steel: #A1A1AA;
+  --slate: #71717A;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: #2A2A2E;
+  --shadow-whisper: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card:    0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-float:   0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
