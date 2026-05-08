@@ -280,13 +280,31 @@
     }
     .desktop-nav { display: none !important; }
     .mobile-burger { display: inline-flex !important; margin-left: auto !important; }
-    :root { --pad-edge: 1.25rem; }
+    :root {
+      --pad-edge: 1.25rem;
+      --section-gap: clamp(2.5rem, 8vw, 4rem);
+    }
     .hero-cta-row { flex-direction: column !important; align-items: stretch !important; }
     .hero-cta-row > * { width: 100% !important; justify-content: center !important; }
     .marquee-text { font-size: clamp(1.4rem, 7vw, 2.4rem) !important; }
     .section-label-text { font-size: 11px !important; }
     .carousel-arrows { display: none !important; }
-    .carousel-card { padding: 1.5rem !important; min-height: auto !important; }
+    .carousel-card {
+      padding: 1.5rem !important;
+      padding-bottom: 3.5rem !important;
+      min-height: auto !important;
+    }
+    .carousel-card .carousel-grid { gap: 1.25rem !important; }
+    .carousel-art { min-height: 200px !important; aspect-ratio: 4 / 3; }
+    /* shrink the about photo so it doesn't dominate the screen */
+    .about-photo-frame {
+      max-width: 260px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1 !important;
+    }
+    .about-grid figure figcaption { text-align: center; }
+    /* tighter hero on mobile */
+    #intro h1 { font-size: clamp(2.75rem, 14vw, 4.5rem) !important; }
     .footer-row { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
     .footer-nav { gap: 16px !important; }
     .fact-grid { grid-template-columns: 1fr !important; }

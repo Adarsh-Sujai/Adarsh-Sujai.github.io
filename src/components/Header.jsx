@@ -157,12 +157,12 @@ const Header = ({ onNavigate, currentRoute }) => {
             inset: 0,
             zIndex: 49,
             background: "var(--canvas)",
-            paddingTop: 96,
+            paddingTop: 80,
             paddingLeft: "var(--pad-edge)",
             paddingRight: "var(--pad-edge)",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
             {navItems.map((n, i) => (
               <a
                 key={n.label}
@@ -171,11 +171,11 @@ const Header = ({ onNavigate, currentRoute }) => {
                 style={{
                   fontFamily: "var(--font-display)",
                   fontWeight: 600,
-                  fontSize: 36,
+                  fontSize: 26,
                   letterSpacing: "-0.025em",
                   color: "var(--ink)",
                   textDecoration: "none",
-                  minHeight: 48,
+                  minHeight: 44,
                   display: "flex", alignItems: "center",
                 }}
               >
@@ -191,11 +191,11 @@ const Header = ({ onNavigate, currentRoute }) => {
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 600,
-                fontSize: 22,
+                fontSize: 17,
                 color: "var(--steel)",
                 textDecoration: "none",
-                marginTop: 8,
-                minHeight: 48,
+                marginTop: 4,
+                minHeight: 40,
                 display: "flex", alignItems: "center",
               }}
             >

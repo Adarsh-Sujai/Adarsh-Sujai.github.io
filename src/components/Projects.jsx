@@ -81,6 +81,7 @@ const Projects = ({ onNavigate }) => {
           overflow: "hidden",
           minHeight: 460,
           touchAction: "pan-y",
+          paddingBottom: "clamp(3.5rem, 6vw, 4.5rem)",
           border: "1px solid var(--hairline-strong)",
           boxShadow: "inset 0 1px 0 rgba(237,237,240,0.04), 0 30px 60px -30px rgba(0,0,0,0.7)",
           transition: "transform 240ms ease-out, box-shadow 240ms ease-out",
@@ -120,7 +121,7 @@ const Projects = ({ onNavigate }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 24, minHeight: 380 }}
+              style={{ display: "flex", flexDirection: "column", gap: 24 }}
             >
               <div>
                 <div className="meta" style={{
@@ -166,7 +167,7 @@ const Projects = ({ onNavigate }) => {
                 </div>
               </div>
 
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 8 }}>
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   View code <span className="arrow">↗</span>
                 </a>
@@ -184,6 +185,7 @@ const Projects = ({ onNavigate }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="carousel-art"
               style={{
                 position: "relative",
                 borderRadius: 18,

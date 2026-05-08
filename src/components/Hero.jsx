@@ -6,7 +6,7 @@ const Hero = ({ onJumpProjects }) => {
     <section id="intro" style={{
       maxWidth: 1400,
       margin: "0 auto",
-      padding: "clamp(2rem, 8vw, 6rem) var(--pad-edge) clamp(3rem, 8vw, 6rem)",
+      padding: "clamp(2rem, 8vw, 6rem) var(--pad-edge) 0",
       position: "relative",
     }}>
       <SectionLabel n="001" label="INTRO" />
@@ -128,7 +128,7 @@ const Marquee = () => {
   const items = ["DEV", "ML", "DATA", "ANALYTICS", "PYTHON", "VISION", "SQL", "BUILD"];
   return (
     <div style={{
-      marginTop: "clamp(3rem, 7vw, 5rem)",
+      marginTop: "var(--section-gap)",
       borderTop: "1px solid var(--hairline)",
       borderBottom: "1px solid var(--hairline)",
       overflow: "hidden",
