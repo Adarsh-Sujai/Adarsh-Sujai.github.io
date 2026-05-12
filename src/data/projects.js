@@ -28,19 +28,19 @@ window.PROJECTS = [
     year: 2024,
   },
   {
-    id: "ipl-analysis",
+    id: "resume-match",
     number: "P-02",
-    title: "IPL Data Analysis",
+    title: "ResumeMatch",
     description:
-      "14 seasons of IPL data analyzed with 10 dark-themed visualizations.",
+      "AI resume analyzer scoring JD match, flagging gaps, and rewriting bullets with Llama 3.3.",
     longDescription:
-      "Exploratory data analysis across 14 seasons of Indian Premier League cricket - covering team form, player consistency, venue effects, and toss-decision impact. Output is a curated set of 10 dark-themed Matplotlib/Seaborn visuals that read as a single editorial story.",
-    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
-    github: "https://github.com/Adarsh-Sujai/ipl-analysis",
+      "A web app that scores how well a resume matches a job description and turns the gap into action. TF-IDF cosine similarity rescales to a 0-100 match score, an ATS readability check flags scanned PDFs and missing section headers, and a Groq-hosted Llama 3.3 70B call suggests tailored bullet rewrites. The API key stays server-side behind Flask, with per-IP rate limits protecting the free quota. Deployed on Render.",
+    tech: ["Python", "Flask", "scikit-learn", "Groq", "Llama 3.3"],
+    github: "https://github.com/Adarsh-Sujai/resume-match",
     demo: null,
     image: null,
     featured: true,
-    year: 2024,
+    year: 2026,
   },
   {
     id: "ipl-dashboard",
@@ -70,6 +70,21 @@ window.PROJECTS = [
     demo: null,
     image: null,
     featured: true,
+    year: 2024,
+  },
+  {
+    id: "ipl-analysis",
+    number: "P-05",
+    title: "IPL Data Analysis",
+    description:
+      "14 seasons of IPL data analyzed with 10 dark-themed visualizations.",
+    longDescription:
+      "Exploratory data analysis across 14 seasons of Indian Premier League cricket - covering team form, player consistency, venue effects, and toss-decision impact. Output is a curated set of 10 dark-themed Matplotlib/Seaborn visuals that read as a single editorial story.",
+    tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    github: "https://github.com/Adarsh-Sujai/ipl-analysis",
+    demo: null,
+    image: null,
+    featured: false,
     year: 2024,
   },
 ];
