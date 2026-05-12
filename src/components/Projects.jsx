@@ -278,7 +278,7 @@ const ProjectArt = ({ project }) => {
           <circle cx="338" cy="268" r="4" fill={colors[0]}/>
         </g>
       )}
-      {project.id === "ipl-analysis" && (
+      {project.id === "resume-match" && (
         <g transform="translate(50,80)">
           {[60, 110, 80, 160, 130, 200, 170, 240].map((h, i) => (
             <rect key={i} x={i * 38} y={260 - h} width="26" height={h} rx="3"
