@@ -30,7 +30,7 @@ window.PROJECTS = [
   {
     id: "resume-match",
     number: "P-02",
-    title: "ResumeMatch",
+    title: "Resume Matcher",
     description:
       "AI resume analyzer scoring JD match, flagging gaps, and rewriting bullets with Llama 3.3.",
     longDescription:
