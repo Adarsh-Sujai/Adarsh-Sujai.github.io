@@ -87,4 +87,20 @@ window.PROJECTS = [
     featured: false,
     year: 2024,
   },
+  {
+    id: "cardly-thumbnails",
+    number: "P-06",
+    title: "Cardly Thumbnails",
+    description:
+      "A browser-based playground to design Open Graph images.",
+    longDescription:
+      "A browser-based playground for designing Open Graph images, GitHub repo thumbnails, YouTube covers, LinkedIn banners and other social cards. Same engine as Vercel's og-playground (Satori), but runs 100% in the browser, with no server and no API calls",
+    tech: ["TypeScript", "JavaScript", "CSS", "HTML"],
+    github: "https://github.com/Adarsh-Sujai/cardly-thumbnails",
+    demo: null,
+    image: null,
+    featured: false,
+    year: 2024,
+  },
+
 ];
