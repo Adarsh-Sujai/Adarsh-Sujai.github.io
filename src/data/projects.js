@@ -94,7 +94,7 @@ window.PROJECTS = [
     description:
       "A browser-based playground to design Open Graph images.",
     longDescription:
-      "A browser-based playground for designing Open Graph images, GitHub repo thumbnails, YouTube covers, LinkedIn banners and other social cards. Same engine as Vercel's og-playground (Satori), but runs 100% in the browser, with no server and no API calls",
+      "A browser-based playground for designing Open Graph images, GitHub repo thumbnails, YouTube covers, LinkedIn banners and other social cards. It runs 100% in the browser, with no server and no API calls, so it can be deploys as a static site.",
     tech: ["TypeScript", "JavaScript", "CSS", "HTML"],
     github: "https://github.com/Adarsh-Sujai/cardly-thumbnails",
     demo: null,
