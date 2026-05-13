@@ -96,7 +96,7 @@ const Hero = ({ onJumpProjects }) => {
         <a href="https://github.com/Adarsh-Sujai" target="_blank" rel="noopener noreferrer" className="btn-ghost">
           GitHub <span className="arrow">↗</span>
         </a>
-        <a href="https://adarsh-sujai.github.io/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+	<a href="https://adarsh-sujai.github.io/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">
           Resume <span className="arrow">↗</span>
         </a>
       </div>
