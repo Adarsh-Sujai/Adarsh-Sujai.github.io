@@ -9,6 +9,9 @@
    - To swap which 4 are featured on the homepage: flip
      `featured: true|false` - no other code changes needed.
    - The /projects page lists EVERY entry, regardless of `featured`.
+   - WEB APP LINK: every project has `liveUrl` + `liveEnabled`. Set
+     `liveEnabled: true` (and a real `liveUrl`) to show a "Live app"
+     button next to "View code". Set `liveEnabled: false` to hide it.
    ============================================================ */
 
 window.PROJECTS = [
@@ -23,6 +26,8 @@ window.PROJECTS = [
     tech: ["Python", "YOLOv8", "EasyOCR", "Flask"],
     github: "https://github.com/Adarsh-Sujai/license-plate-recognition-yolov8",
     demo: null,
+    liveUrl: "",
+    liveEnabled: false,
     image: null,
     featured: true,
     year: 2024,
@@ -38,6 +43,8 @@ window.PROJECTS = [
     tech: ["Python", "Flask", "scikit-learn", "Groq", "Llama 3.3"],
     github: "https://github.com/Adarsh-Sujai/resume-match",
     demo: null,
+    liveUrl: "https://resume-matcher-5hbn.onrender.com/",
+    liveEnabled: true,
     image: null,
     featured: true,
     year: 2026,
@@ -53,6 +60,8 @@ window.PROJECTS = [
     tech: ["Python", "Dashboard", "Visualization"],
     github: "https://github.com/Adarsh-Sujai/ipl-dashboard",
     demo: null,
+    liveUrl: "https://ipl-dashboard-vbym9gxbvf8jakyhzeqtke.streamlit.app/",
+    liveEnabled: true,
     image: null,
     featured: true,
     year: 2024,
@@ -68,6 +77,8 @@ window.PROJECTS = [
     tech: ["Python", "Flask", "SQL", "REST"],
     github: "https://github.com/Adarsh-Sujai/task-manager-api",
     demo: null,
+    liveUrl: "",
+    liveEnabled: false,
     image: null,
     featured: true,
     year: 2024,
@@ -83,6 +94,8 @@ window.PROJECTS = [
     tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     github: "https://github.com/Adarsh-Sujai/ipl-analysis",
     demo: null,
+    liveUrl: "",
+    liveEnabled: false,
     image: null,
     featured: false,
     year: 2024,
@@ -94,10 +107,12 @@ window.PROJECTS = [
     description:
       "A browser-based playground to design Open Graph images.",
     longDescription:
-      "A browser-based playground for designing Open Graph images, GitHub repo thumbnails, YouTube covers, LinkedIn banners and other social cards. It runs 100% in the browser, with no server and no API calls, so it can be deploys as a static site.",
+      "A browser-based playground for designing Open Graph images, GitHub repo thumbnails, YouTube covers, LinkedIn banners and other social cards. Same engine as Vercel's og-playground (Satori), but runs 100% in the browser, with no server and no API calls",
     tech: ["TypeScript", "JavaScript", "CSS", "HTML"],
     github: "https://github.com/Adarsh-Sujai/cardly-thumbnails",
     demo: null,
+    liveUrl: "https://cardly-thumbnails.vercel.app/",
+    liveEnabled: true,
     image: null,
     featured: false,
     year: 2024,

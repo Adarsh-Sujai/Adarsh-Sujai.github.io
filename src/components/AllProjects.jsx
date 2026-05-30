@@ -96,61 +96,73 @@ const AllProjects = ({ onNavigate }) => {
   );
 };
 
-const ProjectCard = ({ project, index }) => (
-  <a
-    href={project.github}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="project-card"
-    style={{
-      opacity: 0,
-      animation: "cardIn 600ms ease-out forwards",
-      animationDelay: (index * 70) + "ms",
-    }}
-  >
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-      <span className="pn" style={{
-        fontFamily: "var(--font-mono)", fontSize: 12,
-        color: "var(--steel)",
-        letterSpacing: "0.08em", textTransform: "uppercase",
-      }}>{project.number}</span>
+const ProjectCard = ({ project, index }) => {
+  const showLive = project.liveEnabled && project.liveUrl;
+  return (
+    <div
+      className="project-card"
+      style={{
+        opacity: 0,
+        animation: "cardIn 600ms ease-out forwards",
+        animationDelay: (index * 70) + "ms",
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+        <span className="pn" style={{
+          fontFamily: "var(--font-mono)", fontSize: 12,
+          color: "var(--steel)",
+          letterSpacing: "0.08em", textTransform: "uppercase",
+        }}>{project.number}</span>
+      </div>
+      <h3 style={{
+        fontFamily: "var(--font-display)", fontWeight: 700,
+        fontSize: "clamp(1.3rem, 2vw, 1.6rem)",
+        letterSpacing: "-0.025em", lineHeight: 1.1,
+        margin: "0 0 12px", color: "var(--ink)",
+      }}>{project.title}</h3>
+      <p style={{
+        fontFamily: "var(--font-body)", fontSize: 14.5,
+        lineHeight: 1.55, color: "var(--steel)",
+        margin: "0 0 20px", flex: 1,
+      }}>{project.description}</p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>
+        {project.tech.map((t) => (
+          <span key={t} style={{
+            fontFamily: "var(--font-mono)", fontSize: 11,
+            padding: "3px 9px", borderRadius: 999,
+            background: "rgba(237,237,240,0.04)",
+            color: "var(--ink-2)",
+            border: "1px solid var(--hairline)",
+          }}>{t}</span>
+        ))}
+      </div>
+      <div style={{
+        display: "flex", alignItems: "center", gap: 18,
+        paddingTop: 14, borderTop: "1px solid var(--hairline)",
+      }}>
+        <a href={project.github} target="_blank" rel="noopener noreferrer"
+          className="card-link" style={{
+            display: "inline-flex", alignItems: "center", gap: 7,
+            fontFamily: "var(--font-mono)", fontSize: 12,
+            color: "var(--steel)", letterSpacing: "0.05em",
+            textDecoration: "none",
+          }}>
+          VIEW CODE <span className="arrow" style={{ fontFamily: "var(--font-mono)", fontSize: 14 }}>↗</span>
+        </a>
+        {showLive && (
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+            className="card-link" style={{
+              display: "inline-flex", alignItems: "center", gap: 7,
+              fontFamily: "var(--font-mono)", fontSize: 12,
+              color: "var(--accent)", letterSpacing: "0.05em",
+              textDecoration: "none",
+            }}>
+            LIVE APP <span className="arrow" style={{ fontFamily: "var(--font-mono)", fontSize: 14 }}>↗</span>
+          </a>
+        )}
+      </div>
     </div>
-    <h3 style={{
-      fontFamily: "var(--font-display)", fontWeight: 700,
-      fontSize: "clamp(1.3rem, 2vw, 1.6rem)",
-      letterSpacing: "-0.025em", lineHeight: 1.1,
-      margin: "0 0 12px", color: "var(--ink)",
-    }}>{project.title}</h3>
-    <p style={{
-      fontFamily: "var(--font-body)", fontSize: 14.5,
-      lineHeight: 1.55, color: "var(--steel)",
-      margin: "0 0 20px", flex: 1,
-    }}>{project.description}</p>
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>
-      {project.tech.map((t) => (
-        <span key={t} style={{
-          fontFamily: "var(--font-mono)", fontSize: 11,
-          padding: "3px 9px", borderRadius: 999,
-          background: "rgba(237,237,240,0.04)",
-          color: "var(--ink-2)",
-          border: "1px solid var(--hairline)",
-        }}>{t}</span>
-      ))}
-    </div>
-    <div style={{
-      display: "flex", justifyContent: "space-between", alignItems: "center",
-      paddingTop: 14, borderTop: "1px solid var(--hairline)",
-    }}>
-      <span style={{
-        fontFamily: "var(--font-mono)", fontSize: 12,
-        color: "var(--steel)", letterSpacing: "0.05em",
-      }}>VIEW CODE</span>
-      <span className="arrow" style={{
-        fontFamily: "var(--font-mono)", fontSize: 14,
-        color: "var(--ink)",
-      }}>↗</span>
-    </div>
-  </a>
-);
+  );
+};
 
 window.AllProjects = AllProjects;

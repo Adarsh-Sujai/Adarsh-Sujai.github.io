@@ -171,6 +171,11 @@ const Projects = ({ onNavigate }) => {
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   View code <span className="arrow">↗</span>
                 </a>
+                {project.liveEnabled && project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                    Live app <span className="arrow">↗</span>
+                  </a>
+                )}
                 <button onClick={() => setShowDetails(project)} className="btn-ghost">
                   Details
                 </button>
@@ -370,6 +375,11 @@ const DetailsModal = ({ project, onClose }) => {
           <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-primary">
             View code <span className="arrow">↗</span>
           </a>
+          {project.liveEnabled && project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              Live app <span className="arrow">↗</span>
+            </a>
+          )}
           <button onClick={onClose} className="btn-ghost">Close</button>
         </div>
       </div>
