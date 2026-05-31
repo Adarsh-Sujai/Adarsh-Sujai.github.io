@@ -1,4 +1,4 @@
-// Projects.jsx - section 003 / SHOWCASE - auto-advancing carousel
+// Projects.jsx- section 003 / SHOWCASE - auto-advancing carousel
 const { motion, AnimatePresence } = window.Motion || {};
 
 const Projects = ({ onNavigate }) => {

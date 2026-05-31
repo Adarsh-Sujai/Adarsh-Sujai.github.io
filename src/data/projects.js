@@ -1,5 +1,5 @@
 /* ============================================================
-   projects.js - Single source of truth for portfolio projects.
+   projects.js - Single source of truth for portfolio projects. refresh
    ------------------------------------------------------------
    RULES
    - To add a project: append one object to the array below.

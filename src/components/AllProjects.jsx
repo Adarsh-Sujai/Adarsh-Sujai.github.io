@@ -14,6 +14,7 @@ const AllProjects = ({ onNavigate }) => {
     e.preventDefault();
     onNavigate("/");
     window.scrollTo({ top: 0 });
+
   };
 
   return (
@@ -164,5 +165,6 @@ const ProjectCard = ({ project, index }) => {
     </div>
   );
 };
+
 
 window.AllProjects = AllProjects;
