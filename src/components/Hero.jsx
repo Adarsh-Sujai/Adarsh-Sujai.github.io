@@ -64,7 +64,7 @@ const Hero = ({ onJumpProjects }) => {
             letterSpacing: "0.03em",
             margin: 0,
           }}>
-            BCA Data Science · Pune, India
+            BCA Data Science · Kerala, India
           </p>
           <p style={{
             fontFamily: "var(--font-mono)",
