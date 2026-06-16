@@ -8,7 +8,7 @@ const Projects = ({ onNavigate }) => {
   const [paused, setPaused] = React.useState(false);
   const [showDetails, setShowDetails] = React.useState(null);
 
-  // Auto-advance respects prefers-reduced-motion
+  // Auto-advance respects prefers-reduced-motionF
   React.useEffect(() => {
     if (paused || featured.length === 0) return;
     const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -275,7 +275,7 @@ const ProjectArt = ({ project }) => {
       {project.id === "license-plate-recognition" && (
         <g>
           <rect x="80" y="160" width="240" height="90" rx="8" fill={colors[2]} stroke={colors[1]} strokeWidth="3"/>
-          <text x="200" y="222" textAnchor="middle" fontFamily="monospace" fontSize="44" fontWeight="700" fill={colors[1]}>MH·12</text>
+          <text x="200" y="222" textAnchor="middle" fontFamily="monospace" fontSize="44" fontWeight="700" fill={colors[1]}>KL·07</text>
           <rect x="60" y="140" width="280" height="130" rx="12" fill="none" stroke={colors[0]} strokeWidth="2" strokeDasharray="6 6"/>
           <circle cx="62" cy="142" r="4" fill={colors[0]}/>
           <circle cx="338" cy="142" r="4" fill={colors[0]}/>
