@@ -61,7 +61,7 @@ const About = () => {
             <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--accent)" }}>
               data scientist
             </span>{" "}
-            from Pune.
+            from Kochi.
           </h2>
           <p style={{
             fontSize: "clamp(15px, 1.15vw, 17px)",
